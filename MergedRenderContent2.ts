@@ -11,19 +11,16 @@ const FIELDS = {
   productVersionId: `${TABLE}.ProductVersionId`,
 };
 
-export interface DMergedRenderContent {
+export interface Content {
   id: string;
-  contentPath: string;
-  meshXOR: string;
-  materialXOR: string;
-  renderBatchId: string | null;
-  productVersionId: string;
 }
 
 export const a = async (defaultConnection: Knex) => {
-  return await defaultConnection(TABLE).select<DMergedRenderContent[]>(FIELDS);
+  return await defaultConnection(TABLE).select<Content[]>(FIELDS);
 };
 
 export const c = async () => {
   const b = await a(knex({}));
 };
+
+type T = Awaited<ReturnType<typeof a>>
