@@ -4,11 +4,7 @@ const TABLE = "table";
 
 const FIELDS = {
   id: `${TABLE}.Id`,
-  contentPath: `${TABLE}.ContentPath`,
-  meshXOR: `${TABLE}.MeshXOR`,
-  materialXOR: `${TABLE}.MaterialXOR`,
-  renderBatchId: `${TABLE}.RenderBatchId`,
-  productVersionId: `${TABLE}.ProductVersionId`,
+  d: `${TABLE}.d`,
 };
 
 export interface Content {
@@ -24,3 +20,7 @@ export const c = async () => {
 };
 
 type T = Awaited<ReturnType<typeof a>>
+
+export const d :T = [{
+
+}]
